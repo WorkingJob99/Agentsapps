@@ -3,153 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work From Home</title>
+    <title>Work From Home Apps</title>
     <style>
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
-        }
-
         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            background: linear-gradient(45deg, #ff758c, #ff7eb3, #ff92a5);
             font-family: Arial, sans-serif;
-            animation: backgroundAnimation 10s infinite alternate;
+            text-align: center;
+            background-color: #f4f4f4;
         }
-
         h1 {
-            font-size: 28px;
-            color: white;
-            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-
-        .container {
+        .app-container {
+            width: 80%;
+            margin: auto;
+        }
+        .app-item {
             display: flex;
             align-items: center;
-            gap: 15px;
             background: white;
             padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .container:hover {
-            transform: scale(1.05);
-        }
-
-        .icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff7eb3, #ff758c);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border: 3px solid white;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .name-box {
-            padding: 10px 15px;
-            border: 2px solid #ff758c;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            background: #fff;
-            color: #ff758c;
-            animation: blink 1.5s infinite;
-        }
-
-        .download-btn {
-            padding: 10px 20px;
-            background: red;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease-in-out;
-        }
-
-        .download-btn:hover {
-            animation: glow 1s infinite alternate;
-            transform: scale(1.1);
-        }
-
-        input, button {
             margin: 10px;
-            padding: 10px;
-            font-size: 14px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
-
-        button {
-            background: #ff758c;
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+        .download-btn {
+            padding: 10px 15px;
+            background: blue;
             color: white;
-            font-weight: bold;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-left: auto;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
-
-        button:hover {
-            background: #ff577f;
+        .floating-icons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .floating-icons a {
+            background: green;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-
-    <h1>Agents Work From Home</h1>
-
-    <div class="container">
-        <div class="icon">
-            <img id="iconImage" src="https://via.placeholder.com/70" alt="Icon">
+    <h1>Agents Work From At Home</h1>
+    
+    <div class="app-container">
+        <div class="app-item">
+            <img src="icon1.png" alt="App Icon" class="app-icon">
+            <div class="app-details">
+                <h2>Teen Patti Master</h2>
+                <p>🎁 Sign Up Bonus ₹30</p>
+                <p>🏦 Min. Withdraw ₹100</p>
+            </div>
+            <a href="#" class="download-btn">⬇ Download</a>
         </div>
-        <div class="name-box" id="appName">App Name</div>
-        <a id="downloadLink" href="#" class="download-btn">Download</a>
+
+        <div class="app-item">
+            <img src="icon2.png" alt="App Icon" class="app-icon">
+            <div class="app-details">
+                <h2>Jaiho Arcade</h2>
+                <p>🎁 Sign Up Bonus ₹150</p>
+                <p>🏦 Min. Withdraw ₹100</p>
+            </div>
+            <a href="#" class="download-btn">⬇ Download</a>
+        </div>
     </div>
 
-    <div>
-        <input type="text" id="imageUrl" placeholder="Enter Image URL">
-        <input type="text" id="appTitle" placeholder="Enter App Name">
-        <input type="text" id="appLink" placeholder="Enter Download Link">
-        <button onclick="updateAppDetails()">Update</button>
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+        <a href="#" class="whatsapp">Follow</a>
+        <a href="#" class="telegram">Join Us</a>
     </div>
 
     <script>
-        function updateAppDetails() {
-            var imageUrl = document.getElementById('imageUrl').value;
-            var appTitle = document.getElementById('appTitle').value;
-            var appLink = document.getElementById('appLink').value;
-
-            if (imageUrl) document.getElementById('https://ibb.co/NdSXgSkf').src = imageUrl;
-            if (appTitle) document.getElementById('Regressoin').textContent = appTitle;
-            if (appLink) document.getElementById('https://rb.gy/o8gj1z').href = appLink;
-        }
+        console.log("App is running!");
     </script>
-
 </body>
 </html>
