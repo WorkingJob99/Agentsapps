@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agents Work From Home</title>
+    <title>Work From Home</title>
     <style>
         body {
             display: flex;
@@ -13,14 +13,21 @@
             height: 100vh;
             text-align: center;
             background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
         }
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .icon {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: #ddd;
             display: flex;
@@ -33,13 +40,35 @@
             height: 100%;
             object-fit: cover;
         }
+        .name-box {
+            padding: 10px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #fff;
+        }
+        .download-btn {
+            padding: 10px 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Agents Work From At Home</h1>
-    <div class="icon">
-        <img src="https://ibb.co/Nn7vXqDm" alt="Icon">
+    <h1>Agents Work From Home</h1>
+
+    <div class="container">
+        <div class="icon">
+            <img id="iconImage" src="your-icon.png" alt="Icon">
+        </div>
+        <div class="name-box">Name Likh Du</div>
+        <a href="your-download-link.com" class="download-btn">Download</a>
     </div>
 
 </body>
