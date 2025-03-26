@@ -3,154 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Download Links</title>
+    <title>Agents Work From Home</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #f4f4f4;
         }
-        .app-container {
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #ddd;
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            justify-content: center;
+            overflow: hidden;
         }
-        .app-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            margin-right: 15px;
-        }
-        .app-name {
-            flex-grow: 1;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .download-btn {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .download-btn:hover {
-            background-color: #45a049;
-        }
-        .add-app-form {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 8px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input[type="text"],
-        input[type="url"] {
+        .icon img {
             width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .submit-btn {
-            background-color: #2196F3;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
-    <h1>App Download Links</h1>
-    
-    <div class="add-app-form">
-        <h2>Add New App</h2>
-        <div class="form-group">
-            <label for="app-logo-upload">App Logo (Image)</label>
-            <input type="file" id="app-logo-upload" accept="image/*">
-        </div>
-        <div class="form-group">
-            <label for="app-name">App Name</label>
-            <input type="text" id="app-name" placeholder="Enter app name">
-        </div>
-        <div class="form-group">
-            <label for="download-link">Download Link</label>
-            <input type="url" id="download-link" placeholder="Enter download URL">
-        </div>
-        <button class="submit-btn" onclick="addApp()">Add App</button>
-    </div>
-    
-    <div id="apps-list">
-        <!-- Apps will be added here dynamically -->
+
+    <h1>Agents Work From At Home</h1>
+    <div class="icon">
+        <img src="https://ibb.co/Nn7vXqDm" alt="Icon">
     </div>
 
-    <script>
-        function addApp() {
-            const logoInput = document.getElementById('app-logo-upload');
-            const nameInput = document.getElementById('app-name');
-            const linkInput = document.getElementById('download-link');
-            
-            if (!logoInput.files[0]) {
-                alert('Please select an app logo');
-                return;
-            }
-            
-            if (!nameInput.value) {
-                alert('Please enter an app name');
-                return;
-            }
-            
-            if (!linkInput.value) {
-                alert('Please enter a download link');
-                return;
-            }
-            
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const appContainer = document.createElement('div');
-                appContainer.className = 'app-container';
-                
-                const logoImg = document.createElement('img');
-                logoImg.className = 'app-logo';
-                logoImg.src = e.target.result;
-                
-                const nameSpan = document.createElement('span');
-                nameSpan.className = 'app-name';
-                nameSpan.textContent = nameInput.value;
-                
-                const downloadBtn = document.createElement('a');
-                downloadBtn.className = 'download-btn';
-                downloadBtn.href = linkInput.value;
-                downloadBtn.textContent = 'Download';
-                downloadBtn.target = '_blank';
-                
-                appContainer.appendChild(logoImg);
-                appContainer.appendChild(nameSpan);
-                appContainer.appendChild(downloadBtn);
-                
-                document.getElementById('apps-list').appendChild(appContainer);
-                
-                // Clear inputs
-                logoInput.value = '';
-                nameInput.value = '';
-                linkInput.value = '';
-            };
-            
-            reader.readAsDataURL(logoInput.files[0]);
-        }
-    </script>
 </body>
 </html>
